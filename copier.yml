@@ -1,0 +1,53 @@
+_jinja_extensions:
+    - copier_template_extensions.TemplateExtensionLoader
+    - extensions.py:MyExtension
+    - extensions.py:SlugifyExtension
+
+_exclude:
+    - "**/__pycache__"
+    - "**/.mypy_cache"
+    - "**/.pytest_cache"
+    - "extensions.py"
+    - "copier.yml"
+
+user_login:
+    type: str
+    when: false
+    default: "{{ user_name() }}"
+
+project_name_input:
+    type: str
+    help: Insert project name
+
+project_name:
+    type: str
+    when: false
+    default: "{{ project_name_input | slugify }}"
+
+package_name_choice_input:
+    type: str
+    default: same as project name
+    help: Choose package name
+    choices:
+        - same as project name
+        - other
+
+package_name_input:
+    type: str
+    help: Insert package name
+    when: "{{ package_name_choice_input == 'other' }}"
+
+package_name:
+    type: str
+    when: false
+    default: >-
+        {%- if package_name_choice_input == 'other' -%}
+            {{ package_name_input | slugify }}
+        {%- else -%}
+            {{ project_name }}
+        {%- endif -%}
+
+_tasks:
+    - command: "git init"
+      working_directory: "{{project_name}}"
+    - command: "echo {{user_login}}"
