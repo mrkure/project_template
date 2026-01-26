@@ -34,7 +34,9 @@ package_name:
     default: "{{project_name}}"
 
 
-# _tasks:
-#     - command: "git init"
+_tasks:
+    - command: "git init"
+    - command: "git add ."
+    - command: "git commit -m 'init from template'"
     #   working_directory: "{{project_name}}"
     # - command: "echo {{user_login}}"
