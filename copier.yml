@@ -8,10 +8,10 @@ _exclude:
     - "**/.mypy_cache"
     - "**/.pytest_cache"
     - "extensions.py"
-    - "copier.yml"
-    - ".git"
-    - ".git/*"
-    - ".gitignore" # Pokud chceš mít v šabloně jiný gitignore než v cíli
+    # - "copier.yml"
+    # - ".git"
+    # - ".git/*"
+    # - ".gitignore" # Pokud chceš mít v šabloně jiný gitignore než v cíli
     
 user_login:
     type: str
@@ -34,7 +34,7 @@ package_name:
     default: "{{project_name}}"
 
 
-_tasks:
-    - command: "git init"
+# _tasks:
+#     - command: "git init"
     #   working_directory: "{{project_name}}"
     # - command: "echo {{user_login}}"
