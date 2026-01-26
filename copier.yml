@@ -8,7 +8,7 @@ _exclude:
     - "**/.mypy_cache"
     - "**/.pytest_cache"
     - "extensions.py"
-    # - "copier.yml"
+    - "copier.yml"
     - ".git"
     - ".git/*"
     - ".gitignore"
