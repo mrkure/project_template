@@ -9,8 +9,8 @@ _exclude:
     - "**/.pytest_cache"
     - "extensions.py"
     # - "copier.yml"
-    # - ".git"
-    # - ".git/*"
+    - ".git"
+    - ".git/*"
     # - ".gitignore" # Pokud chceš mít v šabloně jiný gitignore než v cíli
     
 user_login:
