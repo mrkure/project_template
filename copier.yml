@@ -27,30 +27,14 @@ project_name:
     when: false
     default: "{{ project_name_input | slugify }}"
 
-package_name_choice_input:
-    type: str
-    default: same as project name
-    help: Choose package name
-    choices:
-        - same as project name
-        - other
-
-package_name_input:
-    type: str
-    help: Insert package name
-    when: "{{ package_name_choice_input == 'other' }}"
-
 package_name:
     type: str
-    when: false
-    default: >-
-        {%- if package_name_choice_input == 'other' -%}
-            {{ package_name_input | slugify }}
-        {%- else -%}
-            {{ project_name }}
-        {%- endif -%}
+    help: Insert package name (defaulted to project_name)
+    when: true
+    default: "{{project_name}}"
+
 
 _tasks:
     - command: "git init"
-      working_directory: "{{project_name}}"
-    - command: "echo {{user_login}}"
+    #   working_directory: "{{project_name}}"
+    # - command: "echo {{user_login}}"
