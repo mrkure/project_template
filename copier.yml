@@ -3,6 +3,13 @@ _jinja_extensions:
     - extensions.py:MyExtension
     - extensions.py:SlugifyExtension
 
+_exclude: # uf used as
+    - "**/__pycache__"
+    - "**/.mypy_cache"
+    - "**/.pytest_cache"
+    - "extensions.py"
+    - ".gitignore"
+
 project_name:
     type: str
     default: "{{ _folder_name }}"
