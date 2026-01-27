@@ -5,7 +5,7 @@ from pathlib import Path
 import os
 
 def user_name() -> str:
-    return os.getlogin()
+    return os.getlogin().lower()
 
 
 def slugify(value):
