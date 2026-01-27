@@ -37,4 +37,4 @@ package_name:
 _tasks:
     - command: "git init"
     - command: "git add ."
-    - command: "git commit -m 'template init'"
+    - command: "git commit -m template_init"
