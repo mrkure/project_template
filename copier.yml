@@ -23,15 +23,15 @@ package_name:
     when: true
     default: "{{project_name}}"
 
-user_login:
+user_name:
     type: str
     when: true
-    default: "{{ user_name() }}"
+    default: "{{ git_user_name() }}"
 
 user_email:
     type: str
     when: true
-    default: "{{ user_login }}@bosch.com"
+    default: "{{ git_user_email() }}"
 
 project_description:
     type: str
