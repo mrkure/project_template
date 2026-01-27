@@ -22,12 +22,12 @@ package_name:
 
 user_login:
     type: str
-    when: true
+    when: false
     default: "{{ user_name() }}"
 
 user_email:
     type: str
-    when: true
+    when: false
     default: "{{ user_login }}@bosch.com"
 
 project_description:
