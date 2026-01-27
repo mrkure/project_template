@@ -3,7 +3,7 @@ _jinja_extensions:
     - extensions.py:MyExtension
     - extensions.py:SlugifyExtension
 
-_exclude: # uf used as
+_exclude: 
     - "**/__pycache__"
     - "**/.mypy_cache"
     - "**/.pytest_cache"
