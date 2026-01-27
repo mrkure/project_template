@@ -8,7 +8,7 @@ def user_name() -> str:
     return os.getlogin()
 
 def project_name() -> str:
-    return Path.cwd().current_dir.name 
+    return Path.cwd().name
 
 def slugify(value):
     return value.lower().replace(" ", "_").replace("-", "_")
