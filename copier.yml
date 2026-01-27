@@ -3,15 +3,15 @@ _jinja_extensions:
     - extensions.py:MyExtension
     - extensions.py:SlugifyExtension
 
-_exclude:
-    - "**/__pycache__"
-    - "**/.mypy_cache"
-    - "**/.pytest_cache"
-    - "extensions.py"
-    - "copier.yml"
-    - ".git"
-    - ".git/*"
-    - ".gitignore"
+# _exclude:
+#     - "**/__pycache__"
+#     - "**/.mypy_cache"
+#     - "**/.pytest_cache"
+#     - "extensions.py"
+#     - "copier.yml"
+#     - ".git"
+#     - ".git/*"
+#     - ".gitignore"
 
 user_login:
     type: str
