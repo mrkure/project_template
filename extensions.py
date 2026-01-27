@@ -8,12 +8,12 @@ import os
 def user_name() -> str:
     return os.getlogin().lower()
 
-def git_user_name(default: str) -> str:
-    return subprocess.getoutput("git config user.name").strip() or default
+def git_user_name() -> str:
+    return subprocess.getoutput("git config user.name").strip()
 
 
-def git_user_email(default: str) -> str:
-    return subprocess.getoutput("git config user.email").strip() or default
+def git_user_email() -> str:
+    return subprocess.getoutput("git config user.email").strip()
 
 def slugify(value):
     return value.lower().replace(" ", "_").replace("-", "_")
