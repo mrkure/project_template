@@ -20,7 +20,7 @@ user_login:
 
 project_name_input:
     type: str
-    default: "{{ project_name() }}"
+    default: "{{ project_namea() }}"
     help: Insert project name
 
 project_name:
