@@ -3,36 +3,40 @@ _jinja_extensions:
     - extensions.py:MyExtension
     - extensions.py:SlugifyExtension
 
-_exclude:
-    - "**/__pycache__"
-    - "**/.mypy_cache"
-    - "**/.pytest_cache"
-    - "extensions.py"
-    - "copier.yml"
-    - ".git"
-    - ".git/*"
-    - ".gitignore"
-
-user_login:
-    type: str
-    when: false
-    default: "{{ user_name() }}"
-
-project_name_input:
+project_name:
     type: str
     default: "{{ _folder_name }}"
     help: Insert project name
 
-project_name:
-    type: str
-    when: false
-    default: "{{ project_name_input | slugify }}"
-
 package_name:
     type: str
-    help: Insert package name (defaulted to project_name)
     when: true
     default: "{{project_name}}"
+
+user_login:
+    type: str
+    when: true
+    default: "{{ user_name() }}"
+
+user_email:
+    type: str
+    when: true
+    default: "{{ user_login }}@bosch.com"
+
+project_description:
+    type: str
+    when: true
+    default: "Databricks project"
+
+department_name:
+    type: str
+    when: true
+    default: "PS-SB/EDX3"
+
+service principal ID:
+    type: str
+    when: true
+    default: "87febbc4-033a-4ae2-bb1b-0e9231bca519"
 
 _tasks:
     - command: "git init -b main -q"
