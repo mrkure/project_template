@@ -12,7 +12,7 @@ _exclude:
     - ".git"
     - ".git/*"
     - ".gitignore"
-    
+
 user_login:
     type: str
     when: false
@@ -34,10 +34,7 @@ package_name:
     when: true
     default: "{{project_name}}"
 
-
 _tasks:
     - command: "git init"
-    # - command: "git add ."
-    # - command: "git commit -m 'init from template'"
-    #   working_directory: "{{project_name}}"
-    # - command: "echo {{user_login}}"
+    - command: "git add ."
+    - command: "git commit -m 'template init'"
