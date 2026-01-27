@@ -3,15 +3,15 @@ _jinja_extensions:
     - extensions.py:MyExtension
     - extensions.py:SlugifyExtension
 
-# _exclude:
-#     - "**/__pycache__"
-#     - "**/.mypy_cache"
-#     - "**/.pytest_cache"
-#     - "extensions.py"
-#     - "copier.yml"
-#     - ".git"
-#     - ".git/*"
-#     - ".gitignore"
+_exclude:
+    - "**/__pycache__"
+    - "**/.mypy_cache"
+    - "**/.pytest_cache"
+    - "extensions.py"
+    - "copier.yml"
+    - ".git"
+    - ".git/*"
+    - ".gitignore"
 
 user_login:
     type: str
@@ -35,6 +35,6 @@ package_name:
     default: "{{project_name}}"
 
 _tasks:
-    - command: "git init -b main"
-    - command: "git add ."
-    - command: "git commit -m template_init"
+    - command: "git init -b main -q"
+    - command: "git -c core.safecrlf=false add ."
+    - command: "git commit -q -m template_init"
