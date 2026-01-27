@@ -3,11 +3,14 @@ _jinja_extensions:
     - extensions.py:MyExtension
     - extensions.py:SlugifyExtension
 
-_exclude: 
+_exclude: # uf used as
     - "**/__pycache__"
     - "**/.mypy_cache"
     - "**/.pytest_cache"
     - "extensions.py"
+    - "copier.yml"
+    - ".git"
+    - ".git/*"
     - ".gitignore"
 
 project_name:
