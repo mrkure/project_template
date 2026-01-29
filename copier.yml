@@ -11,7 +11,7 @@ _exclude: # uf used as
     - "copier.yml"
     - ".git"
     - ".git/*"
-    - ".gitignore"
+    # - ".gitignore"
 
 project_name:
     type: str
@@ -33,20 +33,15 @@ user_email:
     when: true
     default: "{{ git_user_email() }}"
 
+python_version:
+    type: str
+    when: true
+    default: "3.12"
+
 project_description:
     type: str
     when: true
     default: "Databricks project"
-
-department_name:
-    type: str
-    when: true
-    default: "PS-SB/EDX3"
-
-service principal ID:
-    type: str
-    when: true
-    default: "87febbc4-033a-4ae2-bb1b-0e9231bca519"
 
 _tasks:
     - command: "git init -b main -q"

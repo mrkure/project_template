@@ -1,0 +1,9 @@
+.venv*/
+.mypy*/
+.databricks/
+build/
+dist/
+__pycache__/
+*.py[oc]
+wheels/
+*.egg-info

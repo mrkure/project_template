@@ -1,0 +1,15 @@
+{
+    "editor.fontSize": 14,
+    "editor.rulers": [100],
+    "python.envFile": "${workspaceFolder}/.env",
+
+    "files.exclude": { // hidden 
+        ".gitignore"    : false,
+        "**/.git"       : true,
+        "**/*.egg-info" : true,
+        "**/__pycache__": true,
+        "**/.mypy_cache": true,
+        ".pytest_cache" : true,
+        ".python-version": true,
+    },
+}
