@@ -11,5 +11,6 @@
         "**/.mypy_cache": true,
         ".pytest_cache" : true,
         ".python-version": true,
+        "tasks_.py":true,
     },
 }

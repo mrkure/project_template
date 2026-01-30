@@ -15,15 +15,12 @@ authors = [{ name = "{{user_name}}", email = "{{user_email}}" }]
 dependencies = []
 
 [project.optional-dependencies]
-cicd = ["python-semantic-release==10.*"] # 8.7.0
 dev = [
     "pandas",
     "pandas-stubs",
-    "azure-storage-blob",
-    "azure-identity",
-    "databricks-connect==17.3",
+    "invoke"
 ]
-dev_ext = ["pyspark", "jupyter", "delta-spark", "pyarrow"]
+
 
 # =============================================================================
 # PROJECT BUILD
