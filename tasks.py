@@ -5,9 +5,8 @@ from tasks_ import run
 @task
 def commit(c, message):
     run(c, """
-        git add .
         git --version
-        git --version
+        git -c core.safecrlf=false add .
         """)
     run(c, f'git commit --allow-empty -m ""{message}""', cmd = False, format = False)
 

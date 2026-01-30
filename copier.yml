@@ -44,8 +44,8 @@ project_description:
     default: ""
 
 _tasks:
+    - command: "uv sync --extra dev"
     - command: "git init -b main -q"
     - command: "git -c core.safecrlf=false add ."
     - command: "git commit -q -m template_init"
-    - command: "uv sync --extra dev"
     - command: "code ."
