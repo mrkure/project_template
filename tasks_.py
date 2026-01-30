@@ -31,13 +31,17 @@ def run(c, command, cmd = True, sep = " && ", format = True):
             command = format_command(command, sep, format)
             result = c.run(command, hide=True, warn=True, shell=PWSH_PATH) 
     else: # bash
-        result = c.run(command, hide=True, warn=True)            
+        command = format_command(command, sep, format)
+        result = c.run(command, hide=True, warn=True)    
+
+
     exit, err, out = result.exited, result.stderr.strip(),result.stdout.strip()
-    print(f"{'exit code: ': <10} {exit}")
+    exitcode = f" exit code : {exit}"
     if err:
-        print(f"{'stderr: ': <10}\n{err}")
+        print(f"{' stderr ':-^30}\n{err}")
     if out:
-        print(f"{'stdout: ': <10}\n{out}")
+        print(f"{' stdout ':-^30}\n{out}")
+    print(f"{exitcode:-^30}")
     return result.exited
 
 # =============================================================================
