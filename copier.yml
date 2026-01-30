@@ -41,7 +41,7 @@ python_version:
 project_description:
     type: str
     when: true
-    default: "Databricks project"
+    default: ""
 
 _tasks:
     - command: "git init -b main -q"
