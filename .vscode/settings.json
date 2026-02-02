@@ -12,5 +12,6 @@
         ".pytest_cache"  : true,
         ".python-version": true,
         "tasks_.py"      : true,
+        "vscode.lnk"     : true
     },
 }
