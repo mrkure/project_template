@@ -42,7 +42,7 @@ def run(c, command, cmd = True, sep = " && ", format = True):
     if out:
         print(f"{' stdout ':-^30}\n{out}")
     print(f"{exitcode:-^30}")
-    return result.exited
+    return exit, err, out
 
 # =============================================================================
 # FUNCTIONS

@@ -1,0 +1,29 @@
+# CHANGELOG
+{% if context.history.unreleased | length > 0 %}
+{# UNRELEASED #}
+## UNRELEASED
+{% for type_, commits in context.history.unreleased | dictsort %}
+### {{ type_ | capitalize }}
+{% for commit in commits %}
+{% set message_lines = commit.message.split("\n") %}
+* {{ message_lines[0] }} ([`{{ commit.short_hash }}`]({{ commit.hexsha | commit_hash_url }}))  
+{% for line in message_lines[1:] -%}
+  {{ line }}  
+{% endfor -%}
+{% endfor %}
+{% endfor %}
+{% endif %}
+{% for version, release in context.history.released.items() %}
+{# RELEASED #}
+## {{ version.as_semver_tag() }} ({{ release.tagged_date.strftime("%Y-%m-%d") }})
+{% for type_, commits in release["elements"] | dictsort %}
+### {{ type_ | capitalize }}
+{% for commit in commits %}
+{% set message_lines = commit.message.split("\n") %}
+* {{ message_lines[0] }} ([`{{ commit.short_hash }}`]({{ commit.hexsha | commit_hash_url }}))  
+{% for line in message_lines[1:] -%}
+  {{ line }}  
+{% endfor -%}
+{% endfor %}
+{% endfor %}
+{% endfor %}
