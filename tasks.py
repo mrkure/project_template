@@ -15,6 +15,12 @@ def commit(c, message):
 def version(c):
     ex, err, out = run(c, 'semantic-release version --no-vcs-release --skip-build', cmd = True, format = False)
     run(c, 'git pull', cmd = True, format = False)    
+
+
+@task
+def versionb(c):
+    ex, err, out = run(c, 'semantic-release version --no-vcs-release --skip-build', cmd = True, format = False)
+    run(c, 'git pull', cmd = True, format = False)    
     if err.startswith("No release will be made"):
             run(c, 'echo uv build skipped', cmd = True, format = False)
     else:
